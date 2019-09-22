@@ -1,4 +1,4 @@
-![elice_logo](https://raw.githubusercontent.com/PierreFG/elice/master/src/img/text_logo.png)
+![elice_logo](/src/img/text_logo.png?raw=true)
 
 ## The team
 
