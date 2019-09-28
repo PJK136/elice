@@ -76,7 +76,7 @@ class dataHandler {
         for (let course of found) {
             if (!courses.has(course)) {
                 courses.set(course, {
-                    minPlaces: Math.floor(data.length/found.size-5), //Min places in this course
+                    minPlaces: Math.max(0, Math.floor(data.length/found.size-5)), //Min places in this course
                     maxPlaces: Math.floor(data.length/found.size+5), //Max places in this course
                     reservedPlaces: 0, //Places spared for other students
                 });
