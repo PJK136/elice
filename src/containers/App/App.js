@@ -374,6 +374,23 @@ class App extends Component {
         else if (autoStudentCount > this.getAutoMaxPlaces())
             this.showError("Il n'y a pas assez de places au maximum pour tous les étudiants en affectation automatique.");
         else {
+            let wishCount = 0;
+            for (let name of this.state.columns.keys()) {
+                let col = this.state.columns.get(name);
+                if (col.state === "wish") {
+                    wishCount++;
+                    if (col.wishNum === -1) {
+                        this.showError("Il faut associer toutes les colonnes des voeux à l'ordre correspondant !");
+                        return;
+                    }
+                }
+            }
+
+            if (wishCount !== this.state.courses.size) {
+                this.showError("Il faut autant de colonnes de vœux que de modules !");
+                return;
+            }
+
             if (useAppeal) {
                 let appealCount = 0;
                 for (let name of this.state.columns.keys()) {
