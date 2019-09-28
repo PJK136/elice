@@ -27,7 +27,7 @@ class Statistics extends Component {
         return (
             <div>
                 <h2>5. Indicateurs de satisfaction</h2>
-                <h4>Pénalité totale de la ventilation : {this.props.statistics.penalty1}</h4>
+                <h4>Pénalité totale de la ventilation : {this.props.statistics.penalty2 || this.props.statistics.penalty1}</h4>
                 <div id="columnsTable" className="mb-3">
                     <Table striped bordered hover size="sm">
                         <thead>
